@@ -33,3 +33,6 @@ def courses_list_page(page_with_state: Page) -> CoursesListPage:
 @pytest.fixture
 def create_course_page(page_with_state: Page) -> CreateCoursePage:
     return CreateCoursePage(page=page_with_state)
+
+
+# CI
