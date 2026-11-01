@@ -6,12 +6,9 @@ __pycache__
 allure-results
 allure-report
 
-.env
-
 
 # игнор опредленного расширения файлов
 *.html
 *.json
 videos
 tracing
-
