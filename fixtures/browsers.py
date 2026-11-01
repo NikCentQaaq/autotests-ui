@@ -1,7 +1,7 @@
-
+import re
 import pytest
 from _pytest.fixtures import SubRequest
-from playwright.sync_api import Page, Playwright
+from playwright.sync_api import Page, Playwright, expect
 from pages.authentication.registration_page import RegistrationPage
 from tools.playwright.pages import initialize_playwright_page
 from config import settings
@@ -34,6 +34,9 @@ def initialize_browser_state(playwright: Playwright):
     )
     registration_page.click_registration_button()
 
+    expect(page).to_have_url(
+        re.compile(r".*/#/dashboard\s*$")
+    )
     context.storage_state(path=settings.browser_state_file)
     browser.close()
 
